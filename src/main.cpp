@@ -30,8 +30,61 @@ void setup()
   pinMode(sensor3, INPUT);
   pinMode(sensor4, INPUT);
 }
+int SENSOR_READER() {}
+void MOTOR_CONTROL(int reader)
+{
+  if (reader == 1) // едем прямо
+  {
+    digitalWrite(motorIN1a, HIGH);
+    digitalWrite(motorIN1a, LOW);
+    digitalWrite(motorIN2a, HIGH);
+    digitalWrite(motorIN2b, LOW);
+  }
 
+  else if (reader == 2)
+  {
+    digitalWrite(motorIN1a, HIGH);
+    digitalWrite(motorIN1a, LOW);
+    digitalWrite(motorIN2a, LOW);
+    digitalWrite(motorIN2b, LOW);
+  }
+
+  else if (reader == 3)
+  {
+    digitalWrite(motorIN1a, LOW);
+    digitalWrite(motorIN1a, LOW);
+    digitalWrite(motorIN2a, HIGH);
+    digitalWrite(motorIN2b, LOW);
+  }
+
+  else
+  {
+    digitalWrite(motorIN1a, LOW);
+    digitalWrite(motorIN1a, LOW);
+    digitalWrite(motorIN2a, LOW);
+    digitalWrite(motorIN2b, LOW);
+  }
+}
 void loop()
 {
-  // put your main code here, to run repeatedly:
+  /*
+  считывам показания с дачтчиков (есть 2 датчика)
+  !фукнкция обработки датчиков{
+  если оба датчика показывают белое тогда вернуть 1
+  если левый датчик показывает белое, правый черное тогда вернуть 2
+  если левый датчик показывает черное, правый белое тогда вернуть 3
+  если оба датчика показываю черное тогда вернуть 4
+  !}
+  ! управление моторами{
+  если //! фукнкция обработки датчиков вернула 1
+  едем прямо
+  если //! фукнкция обработки датчиков вернула 2
+  поварачиваем напрвао
+  если //! фукнкция обработки датчиков вернула 3
+  поварачиваем налево
+  если //! фукнкция обработки датчиков вернула 4
+  проверяем где мы. Если на старте, тогда едем вперед. Если мы уже едем, тогда останавливаемся.
+  !}
+
+  */
 }
