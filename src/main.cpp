@@ -15,14 +15,16 @@ int sensor4 = 12;
 
 void setup()
 {
+  // подключаем один мотор
   pinMode(motorIN1a, OUTPUT);
   pinMode(motorIN1b, OUTPUT);
   pinMode(motorEN1, OUTPUT);
 
+  // подключаем другой мотор
   pinMode(motorIN2a, OUTPUT);
   pinMode(motorIN2b, OUTPUT);
   pinMode(motorEN2, OUTPUT);
-
+  // подключаем датчики черного/белого
   pinMode(sensor1, INPUT);
   pinMode(sensor2, INPUT);
   pinMode(sensor3, INPUT);
